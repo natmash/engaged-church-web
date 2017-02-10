@@ -1,7 +1,7 @@
 package com.vaadin.demo.dashboard.view;
 
-import com.vaadin.demo.dashboard.event.DashboardEvent.UserLoginRequestedEvent;
-import com.vaadin.demo.dashboard.event.DashboardEventBus;
+import com.churchmanager.event.DashboardEventBus;
+import com.churchmanager.event.DashboardEvent.UserLoginRequestedEvent;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Page;

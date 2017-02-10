@@ -15,10 +15,10 @@ import com.vaadin.demo.dashboard.domain.User;
 public interface DataProvider {
     /**
      * @param count
-     *            Number of transactions to fetch.
-     * @return A Collection of most recent transactions.
+     *            Number of users to fetch.
+     * @return A Collection of most recent users.
      */
-    Collection<Transaction> getRecentTransactions(int count);
+    Collection<Transaction> getRecentUsers(int count);
 
     /**
      * @param id
@@ -69,8 +69,8 @@ public interface DataProvider {
     /**
      * @param startDate
      * @param endDate
-     * @return A Collection of Transactions between the given start and end
+     * @return A Collection of Users between the given start and end
      *         dates.
      */
-    Collection<Transaction> getTransactionsBetween(Date startDate, Date endDate);
+    Collection<Transaction> getUsersBetween(Date startDate, Date endDate);
 }

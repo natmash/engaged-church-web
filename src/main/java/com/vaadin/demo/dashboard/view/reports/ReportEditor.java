@@ -9,7 +9,7 @@ import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.demo.dashboard.component.InlineTextEditor;
 import com.vaadin.demo.dashboard.component.TopSixTheatersChart;
 import com.vaadin.demo.dashboard.component.TopTenMoviesTable;
-import com.vaadin.demo.dashboard.component.TransactionsListing;
+import com.vaadin.demo.dashboard.component.UsersListing;
 import com.vaadin.demo.dashboard.domain.Transaction;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
@@ -188,7 +188,7 @@ public final class ReportEditor extends VerticalLayout {
             } else if (type == PaletteItemType.CHART) {
                 result = new TopSixTheatersChart();
             } else if (type == PaletteItemType.TRANSACTIONS) {
-                result = new TransactionsListing(
+                result = new UsersListing(
                         (Collection<Transaction>) prefillData);
             }
 
@@ -306,7 +306,7 @@ public final class ReportEditor extends VerticalLayout {
     public enum PaletteItemType {
         TEXT("Text Block", FontAwesome.FONT), TABLE("Top 10 Movies",
                 FontAwesome.TABLE), CHART("Top 6 Revenue",
-                FontAwesome.BAR_CHART_O), TRANSACTIONS("Latest transactions",
+                FontAwesome.BAR_CHART_O), TRANSACTIONS("Latest users",
                 null);
 
         private final String title;

@@ -3,9 +3,9 @@ package com.vaadin.demo.dashboard.component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.churchmanager.event.DashboardEventBus;
+import com.churchmanager.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.vaadin.demo.dashboard.domain.Movie;
-import com.vaadin.demo.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
-import com.vaadin.demo.dashboard.event.DashboardEventBus;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.Responsive;

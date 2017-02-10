@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.vaadin.demo</groupId>
-	<artifactId>quicktickets-dashboard</artifactId>
+	<groupId>com.churchmanager</groupId>
+	<name>Church Manager Web UI</name>
 	<version>1.0.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -125,6 +125,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.rethinkdb</groupId>
+			<artifactId>rethinkdb-driver</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
 			<version>${vaadin.version}</version>
@@ -171,12 +176,17 @@
 			<artifactId>guava</artifactId>
 			<version>18.0</version>
 		</dependency>
-        
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jdbi</groupId>
+			<artifactId>jdbi</artifactId>
+			<version>2.77</version>
 		</dependency>
 	</dependencies>
 
@@ -185,8 +195,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -215,7 +225,7 @@
 					<draftCompile>false</draftCompile>
 					<style>OBF</style>
 					<compileReport>true</compileReport>
-					<runTarget>http://localhost:8080/</runTarget>
+					<runTarget>http://localhost:8070/</runTarget>
 				</configuration>
 				<executions>
 					<execution>
@@ -223,9 +233,9 @@
 						</configuration>
 						<goals>
 							<goal>resources</goal>
-              <goal>update-theme</goal>
+							<goal>update-theme</goal>
 							<goal>update-widgetset</goal>
-              <goal>compile-theme</goal>
+							<goal>compile-theme</goal>
 							<goal>compile</goal>
 						</goals>
 					</execution>
@@ -291,4 +301,5 @@
 		</pluginManagement>
 	</build>
 
+	<artifactId>bslc-church-manager</artifactId>
 </project>

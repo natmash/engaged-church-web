@@ -55,7 +55,7 @@ public class DummyDataProvider implements DataProvider {
     private static Multimap<String, String> countryToCities;
     private static Date lastDataUpdate;
     private static Collection<Movie> movies;
-    private static Multimap<Long, Transaction> transactions;
+    private static Multimap<Long, Transaction> users;
     private static Multimap<Long, MovieRevenue> revenue;
 
     private static Random rand = new Random();
@@ -78,7 +78,7 @@ public class DummyDataProvider implements DataProvider {
     private void refreshStaticData() {
         countryToCities = loadTheaterData();
         movies = loadMoviesData();
-        transactions = generateTransactionsData();
+        users = generateUsersData();
         revenue = countRevenues();
     }
 
@@ -297,11 +297,11 @@ public class DummyDataProvider implements DataProvider {
     }
 
     /**
-     * Create a list of dummy transactions
+     * Create a list of dummy users
      *
      * @return
      */
-    private Multimap<Long, Transaction> generateTransactionsData() {
+    private Multimap<Long, Transaction> generateUsersData() {
         Multimap<Long, Transaction> result = MultimapBuilder.hashKeys()
                 .arrayListValues().build();
 
@@ -400,17 +400,17 @@ public class DummyDataProvider implements DataProvider {
     }
 
     @Override
-    public Collection<Transaction> getRecentTransactions(int count) {
-        List<Transaction> orderedTransactions = Lists.newArrayList(transactions
+    public Collection<Transaction> getRecentUsers(int count) {
+        List<Transaction> orderedUsers = Lists.newArrayList(users
                 .values());
-        Collections.sort(orderedTransactions, new Comparator<Transaction>() {
+        Collections.sort(orderedUsers, new Comparator<Transaction>() {
             @Override
             public int compare(Transaction o1, Transaction o2) {
                 return o2.getTime().compareTo(o1.getTime());
             }
         });
-        return orderedTransactions.subList(0,
-                Math.min(count, transactions.values().size() - 1));
+        return orderedUsers.subList(0,
+                Math.min(count, users.values().size() - 1));
     }
 
     private Multimap<Long, MovieRevenue> countRevenues() {
@@ -424,7 +424,7 @@ public class DummyDataProvider implements DataProvider {
 
     private Collection<MovieRevenue> countMovieRevenue(Movie movie) {
         Map<Date, Double> dailyIncome = new HashMap<Date, Double>();
-        for (Transaction transaction : transactions.get(movie.getId())) {
+        for (Transaction transaction : users.get(movie.getId())) {
             Date day = getDay(transaction.getTime());
 
             Double currentValue = dailyIncome.get(day);
@@ -501,7 +501,7 @@ public class DummyDataProvider implements DataProvider {
     @Override
     public double getTotalSum() {
         double result = 0;
-        for (Transaction transaction : transactions.values()) {
+        for (Transaction transaction : users.values()) {
             result += transaction.getPrice();
         }
         return result;
@@ -518,9 +518,9 @@ public class DummyDataProvider implements DataProvider {
     }
 
     @Override
-    public Collection<Transaction> getTransactionsBetween(final Date startDate,
+    public Collection<Transaction> getUsersBetween(final Date startDate,
             final Date endDate) {
-        return Collections2.filter(transactions.values(),
+        return Collections2.filter(users.values(),
                 new Predicate<Transaction>() {
                     @Override
                     public boolean apply(Transaction input) {

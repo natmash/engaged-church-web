@@ -4,10 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.churchmanager.event.DashboardEventBus;
+import com.churchmanager.event.DashboardEvent.ReportsCountUpdatedEvent;
+import com.churchmanager.event.DashboardEvent.TransactionReportEvent;
 import com.google.common.eventbus.Subscribe;
-import com.vaadin.demo.dashboard.event.DashboardEvent.ReportsCountUpdatedEvent;
-import com.vaadin.demo.dashboard.event.DashboardEvent.TransactionReportEvent;
-import com.vaadin.demo.dashboard.event.DashboardEventBus;
 import com.vaadin.demo.dashboard.view.reports.ReportEditor.PaletteItemType;
 import com.vaadin.demo.dashboard.view.reports.ReportEditor.ReportEditorListener;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
@@ -159,7 +159,7 @@ public final class ReportsView extends TabSheet implements View, CloseHandler,
                     + " (" + getComponentCount() + ")");
         } else if (reportType == ReportType.TRANSACTIONS) {
             reportEditor
-                    .setTitle("Generated report from selected transactions");
+                    .setTitle("Generated report from selected users");
             reportEditor.addWidget(PaletteItemType.TEXT, "");
             reportEditor.addWidget(PaletteItemType.TRANSACTIONS, prefillData);
         }
@@ -171,7 +171,7 @@ public final class ReportsView extends TabSheet implements View, CloseHandler,
 
     @Subscribe
     public void createTransactionReport(final TransactionReportEvent event) {
-        addReport(ReportType.TRANSACTIONS, event.getTransactions());
+        addReport(ReportType.TRANSACTIONS, event.getUsers());
     }
 
     @Override
