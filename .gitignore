@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 target/*
 movies.txt
 .settings
@@ -13,3 +14,17 @@ rebel.xml
 *.iml
 .idea/
 
+=======
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> bac6d0268a97ece70cab864bcdb5329bcee26b50

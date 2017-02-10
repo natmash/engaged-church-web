@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Vaadin QuickTickets Dashboard Demo
 ==================================
 
@@ -24,3 +25,7 @@ Licenses
 The source code is released under Apache 2.0.
 
 The application uses the [Vaadin Charts 2](https://vaadin.com/charts) add-on, which is released under the Commercial Vaadin Addon License: https://vaadin.com/license/cval-3
+=======
+# engaged-church-web
+This is the web portion of the Engaged Church application.
+>>>>>>> bac6d0268a97ece70cab864bcdb5329bcee26b50
