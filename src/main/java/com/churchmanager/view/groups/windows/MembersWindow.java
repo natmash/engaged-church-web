@@ -1,5 +1,6 @@
 package com.churchmanager.view.groups.windows;
 
+import com.churchmanager.dao.impl.RealTimeGroupDao;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Table;
@@ -19,7 +20,7 @@ public class MembersWindow extends Window {
 
 	private void init() {
 		final Window window = new Window();
-		VerticalLayout subContent = new VerticalLayout();
+		final VerticalLayout subContent = new VerticalLayout();
 		subContent.setMargin(true);
 
 		window.setClosable(true);
@@ -29,10 +30,13 @@ public class MembersWindow extends Window {
 		window.setContent(subContent);
 
 		subContent.addComponent(new Label(group));
-		Table table = new Table();
+		final Table table = new Table();
 
 		subContent.addComponent(new Button("Apply"));
 
+		new RealTimeGroupDao().getMembers(group);
+		
+		
 		window.center();
 
 		// Open it in the UI

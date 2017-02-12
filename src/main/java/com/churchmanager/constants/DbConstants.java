@@ -4,8 +4,13 @@ public class DbConstants {
 
 	public static final String DB_NAME = "church";
 
-	public static final String DB_HOST = "localhost";
+	public static final String DB_HOST;
 
-	public static final long DB_PORT = 28015;
+	public static final int DB_PORT;
+
+	static {
+		DB_HOST = "localhost";
+		DB_PORT = 28015;
+	}
 
 }

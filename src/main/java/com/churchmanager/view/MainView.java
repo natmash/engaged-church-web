@@ -1,6 +1,7 @@
-package com.vaadin.demo.dashboard.view;
+package com.churchmanager.view;
 
 import com.vaadin.demo.dashboard.DashboardNavigator;
+import com.vaadin.demo.dashboard.view.DashboardMenu;
 import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;

@@ -1,0 +1,74 @@
+{
+	"system": {
+		"admin": [
+			"mnash",
+			"nwilson"
+		],
+		"owner": "akohl"
+	},
+	"groups": {
+		"Middle School Ministry": {
+			"description": "For grades 5-8.  We will discuss things pertinent to what kids encouter these days.",
+			"owners": [
+				"jdgifford",
+				"jkeithley"
+			],
+			"status": "INACTIVE",
+			"members": [
+				"mnash",
+				"jdgifford",
+				"jkeithley",
+				"chaack"
+			]
+		},
+		"Men's Ministry": {
+			"description": "For men looking for a challenge to find God.",
+			"owners": [
+				"nbeard",
+				"tfucinaro"
+			],
+			"status": "ACTIVE",
+			"members": [
+				"tfucinaro",
+				"nbeard",
+				"mnash",
+				"chaack",
+				"rlattimer",
+				"pspieler"
+			]
+		}
+	},
+	"users": {
+		"mnash": {
+			"status": "ACTIVE",
+			"first_name": "Matt",
+			"last_name": "Nash"
+		},
+		"chaack": {
+			"status": "ACTIVE",
+			"first_name": "Christian",
+			"last_name": "Haack"
+		},
+		"tfucinaro": {
+			"status": "INACTIVE",
+			"first_name": "Tony",
+			"last_name": "Fucinaro"
+		}
+	},
+	"events": {
+		"ab741bc2-f0e7-11e6-bc64-92361f002671": {
+			"name": "Middle School Lock-In",
+			"description": "Come join us for the next lock-in event!  We will have snacks, a Madden tournament, and major devotional time!",
+			"location":"Beautiful Savior Youth Room",
+			"latitude": -96.1,
+			"longitude": 46.93,
+			"start": "2016-04-23T18:00:00.000Z",
+			"end": "2016-04-24T06:30:00.000Z",
+			"owner": "jkeithley",
+			"group": "Middle School Ministry",
+			"invited": [
+				{"jkeithley": "YES"},{"mnash":"PENDING"},{"chaack":"NO"},{"tfucinaro":"MAYBE"}
+				]
+			}
+		}
+	}
